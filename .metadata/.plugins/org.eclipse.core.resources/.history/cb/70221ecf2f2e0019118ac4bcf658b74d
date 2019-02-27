@@ -1,0 +1,12 @@
+package com.wbl.restassured.RestAssuredPractice;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+public class RestAssuredExampleGet {
+	//http://dummy.restapiexample.com/api/v1/employees
+	@Test
+	public void statusCodeValidation()
+	{
+		given().when
+	}
+}

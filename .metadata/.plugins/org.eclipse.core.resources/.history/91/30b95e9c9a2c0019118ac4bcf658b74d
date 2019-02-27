@@ -1,0 +1,30 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.ss.usermodel.Workbook;
+
+public class ReadExcel {
+	Workbook wb;
+	static String filepath="C:\\Users\\Charanya Vivek\\Documents\\Sample.xlsx";
+	public void readExcel1()
+	{
+		FileInputStream fin=null;
+		try {
+			 fin=new FileInputStream("filepath");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String diffExtention=filepath.substring(filepath.indexOf("."));
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

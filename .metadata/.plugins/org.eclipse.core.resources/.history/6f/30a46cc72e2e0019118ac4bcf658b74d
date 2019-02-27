@@ -1,0 +1,5 @@
+package com.wbl.restassured.RestAssuredPractice;
+
+public class RestAssuredExampleGet {
+
+}

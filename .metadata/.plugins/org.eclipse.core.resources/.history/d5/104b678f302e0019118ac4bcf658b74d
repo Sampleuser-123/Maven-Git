@@ -1,0 +1,14 @@
+package com.wbl.restassured.RestAssuredPractice;
+
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+public class RestAssuredExampleGet {
+	//http://dummy.restapiexample.com/api/v1/employees
+	@Test
+	public void statusCodeValidation()
+	{
+		given().when().get().assertThat.status()
+	}
+}

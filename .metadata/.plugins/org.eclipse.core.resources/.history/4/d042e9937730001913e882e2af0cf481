@@ -1,0 +1,15 @@
+package com.wbl.practice.WebdriverSelenium;
+
+public class Screenshotcapture {
+	public void screenShot()
+	{
+		Robot rob=new Robot();
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class DataDriverExcel {
+	WebDriver driver;
+	/*public DataDriverExcel(WebDriver driver)
+	{
+		this.driver=driver;
+	}*/
+	public void getExcelValue()
+	{   
+		driver.get("http://www.whiteboxqa.com/");
+	
+		WebElement login=driver.findElement(By.id("loginButton"));
+		login.click();
+		
+		//return null;
+	}
+
+}

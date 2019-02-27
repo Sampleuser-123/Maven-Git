@@ -1,0 +1,60 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import static org.testng.Assert.assertEquals;
+
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class DataDrivenTest {
+	WebDriver driver;
+	DataDriverExcel drvobj;
+	@BeforeClass
+	public void setUp()
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Charanya Vivek\\eclipse-workspace\\WebdriverSelenium\\resources\\geckodriver.exe");
+	   driver=new FirefoxDriver();
+		//drvobj=new DataDriverExcel(new FirefoxDriver());
+	   drvobj=new DataDriverExcel(driver);
+		 //driver.manage().window().maximize();
+	  
+	}
+	@Test(testName="Login")
+	public void validateLogin() throws EncryptedDocumentException, InvalidFormatException, IOException, InterruptedException
+	{
+		//drvobj=new DataDriverExcel(new FirefoxDriver());
+		String loginvalidate=drvobj.clickLogin();
+		assertEquals(loginvalidate,"Login");
+		//assert.assertEqual
+	//}
+	//@Test(dependsOnMethods="Login")
+	//public void readExcel() throws EncryptedDocumentException, InvalidFormatException, IOException
+	//{
+		WorksheetRead extractcolumnvalue=new WorksheetRead();
+		int rowcount=extractcolumnvalue.rowCount("FirstSheet");
+		for(int i=1;i<=rowcount+1;i++)
+		{
+		String usernameexcel=extractcolumnvalue.excelRead("FirstSheet",i,0);
+		String passwordexcel=extractcolumnvalue.excelRead("FirstSheet",i,1);
+		drvobj.getData(usernameexcel,passwordexcel);
+		Thread.sleep(1000);
+		drvobj.clickLogin();
+		}
+	}
+	
+	/*@AfterSuite
+	public void tearDown()
+	{
+		driver.close();
+	}*/
+
+}

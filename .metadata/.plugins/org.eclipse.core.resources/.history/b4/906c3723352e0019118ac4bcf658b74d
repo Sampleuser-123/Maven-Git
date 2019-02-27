@@ -1,0 +1,29 @@
+package com.wbl.restassured.RestAssuredPractice;
+
+
+//<scope>compile</scope> from pom .xml for restassured dependency,otherwise error comes
+import org.testng.annotations.Test;
+import static io.restassured.RestAssured.*;
+import static io.restassured.matcher.RestAssuredMatchers.*;
+import static org.hamcrest.Matchers.*;
+import static io.restassured.module.jsv.JsonSchemaValidator.*;
+public class RestAssuredExampleGet {
+	//http://dummy.restapiexample.com/api/v1/employees
+	
+	@Test
+	public void statusCodeValidation()
+	{
+		given().
+	when().
+	get("http://dummy.restapiexample.com/api/v1/employees").
+	then().assertThat().statusCode(200);
+	}
+	@Test
+	public void idCheck()
+	{
+		given().
+	when().
+	get("http://dummy.restapiexample.com/api/v1/employees").
+	then().body("@id",equalTo(16305));
+	}
+}

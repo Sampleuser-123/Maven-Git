@@ -1,0 +1,29 @@
+package com.wbl.Crossbrowser.CrossbrowserTesting;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class CrossbrowserWalmartTest {
+	 WebDriver driver;
+	 @BeforeClass
+	public void setup() 
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Charanya Vivek\\eclipse-workspace\\CrossbrowserTesting\\resources\\geckodriver.exe");
+	   // driver=new FirefoxDriver();//cannot instantiate webdriver
+	    
+	}
+	 @Test
+public void validatePage()
+{
+	CrossbrowserWalmart cr=new CrossbrowserWalmart(new FirefoxDriver());
+	//String PageTitle=
+	cr.addCart("laptop");
+	//assertEquals(PageTitle,"Lenovo Ideapad 330, 15.6" screen Laptop, Intel Celeron N4000, 4GB RAM, 1TB HDD, WIN 10, Platinum Grey - Walmart.com");
+	}
+/*public void tearDown() 
+{
+	driver.quit();
+}*/
+}

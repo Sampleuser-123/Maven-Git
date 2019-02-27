@@ -1,0 +1,35 @@
+package com.wbl.Crossbrowser.CrossbrowserTesting;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+public class CrossbrowserWalmart {
+	
+	//Walmart search flow
+	public void addCart()
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Charanya Vivek\\eclipse-workspace\\CrossbrowserTesting\\resources\\geckodriver.exe");
+	    WebDriver driver=new FirefoxDriver();//cannot instantiate webdriver
+	    driver.get("https://www.walmart.com/");
+	    WebElement search=driver.findElement(By.id("global-search-input"));
+	    search.sendKeys("laptop");
+	    driver.findElement(By.name("elc-icon-search-nav")).click();
+	    driver.findElement(By.linkText("Lenovo Ideapad 330, 15.6\" screen Laptop, Intel Celeron N4000, 4GB RAM, 1TB HDD, WIN 10, Platinum Grey")).click();
+	   //option-overlay
+	    
+	   driver.findElement(By.xpath("//div[@class='variant-option-inner-container']/div[1]")).click();
+	   // driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
+	    driver.findElement(By.xpath("//span[@class='button-wrapper']/span[1]")).click();
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		CrossbrowserWalmart cr=new CrossbrowserWalmart();
+		cr.addCart();
+	}
+
+}

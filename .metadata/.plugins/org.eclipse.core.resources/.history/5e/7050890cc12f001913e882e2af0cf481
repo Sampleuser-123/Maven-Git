@@ -1,0 +1,28 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class DataDrivenTest {
+	WebDriver driver;
+	DataDriverExcel drvobj;
+	@BeforeClass
+	public void setUp()
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Charanya Vivek\\eclipse-workspace\\WebdriverSelenium\\resources\\geckodriver.exe");
+	   //driver=new FirefoxDriver();
+		drvobj=new DataDriverExcel(new FirefoxDriver());
+	    
+	}
+	@Test
+	public void readExcel()
+	{
+		
+		drvobj.getExcelValue();
+	}
+
+}

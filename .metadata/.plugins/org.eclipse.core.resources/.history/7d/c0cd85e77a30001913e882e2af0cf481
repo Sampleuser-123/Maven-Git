@@ -1,0 +1,28 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.Toolkit;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+
+import javax.imageio.ImageIO;
+
+import java.awt.AWTException;
+
+import java.awt.HeadlessException;
+
+public class ScreenshotcaptureUtil {
+	public void screenShot() throws HeadlessException, AWTException, IOException 
+	{
+		BufferedImage in=new Robot().createScreenCapture(new Rectangle(Toolkit.getDefaultToolkit().getScreenSize()));
+		ImageIO.write(in, "png",new File("C:\\Users\\Charanya Vivek\\eclipse-workspace\\WebdriverSelenium\\resources\\ScreenShotRobotClass.png" ));
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

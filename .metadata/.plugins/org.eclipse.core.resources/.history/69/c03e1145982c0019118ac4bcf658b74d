@@ -1,0 +1,10 @@
+package com.wbl.practice.WebdriverSelenium;
+
+public class HelloWorld {
+public static void main(String args[])
+{
+String filepath="C:\\Users\\Charanya Vivek\\Documents";
+System.out.println("hello");
+String diffExtention=filepath.substring(filepath.indexOf("."));
+}
+}

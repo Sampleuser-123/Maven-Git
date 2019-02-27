@@ -1,0 +1,16 @@
+package com.wbl.Crossbrowser.CrossbrowserTesting;
+
+public class CrossbrowserWalmart {
+	
+	//Walmart search flow
+	public void addCart()
+	{
+		System.setProperty(webdriver.chrome.driver, value)
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

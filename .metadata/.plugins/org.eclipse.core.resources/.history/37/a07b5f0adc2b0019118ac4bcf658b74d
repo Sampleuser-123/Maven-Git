@@ -1,0 +1,35 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+
+public class MouseHover {
+	WebDriver driver;
+	@BeforeClass
+	public void setUp()
+	{
+		System.setProperty("webdriver.gecko.driver","C:\\Users\\Charanya Vivek\\eclipse-workspace\\WebdriverSelenium\\resources\\geckodriver.exe");
+	    driver=new FirefoxDriver();
+	    driver.get("https://www.actitime.com/download");
+	}
+	@Test
+	public void mouseOver()
+	{
+		WebElement element=driver.findElement(By.linkText("Features"));
+		//Set<String> windowid=driver.getWindowHandles();
+		Actions act=new Actions(driver);
+		act.moveToElement(element).build().perform();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+		driver.findElement(By.linkText("Reports and Data Analysis"));
+		
+	}
+
+}

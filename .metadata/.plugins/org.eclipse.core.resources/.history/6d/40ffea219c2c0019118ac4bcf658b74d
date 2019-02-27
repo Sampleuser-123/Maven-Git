@@ -1,0 +1,51 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+public class ReadExcel {
+	//workbook is an interface and its implementation is HSSFworkbook and XSSFworkbook classes
+	Workbook wb;
+	static String filepath="C:\\Users\\Charanya Vivek\\Documents\\Sample.xlsx";
+	public void readExcel1()
+	{
+		FileInputStream fin=null;
+		try {
+			 fin=new FileInputStream("filepath");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		//to get the extention of file
+		String diffExtention=filepath.substring(filepath.indexOf("."));
+		if(diffExtention.equals(".xlsx"))
+		{
+			System.out.println("XSSFWorkbook obj of type workbook is created");
+			wb=new XSSFWorkbook();
+			
+		}
+		else {
+			System.out.println("HSSFWorkbook obj of type workbook is created");
+			wb=new HSSFWorkbook();
+			
+		}
+		wb.getSheet("Sheet1");
+		wb.getName(filepath);
+		System.out.println(wb.getName(filepath));
+		
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 ReadExcel readex= new ReadExcel();
+		 readex.readExcel1();
+	}
+
+}

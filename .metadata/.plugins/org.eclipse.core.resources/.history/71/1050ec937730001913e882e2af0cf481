@@ -1,0 +1,18 @@
+package com.wbl.practice.WebdriverSelenium;
+
+import java.awt.Robot;
+import java.io.BufferedInputStream;
+
+public class Screenshotcapture {
+	public void screenShot()
+	{
+		BufferedInputStream in=new Robot().createScreenCapture(new Rectangle());
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
